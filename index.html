@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de mi-session | P.M.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div id="app" v-cloak>
+
+        <h1>Liste des caractères de l'alphabet hiragana</h1>
+
+        <div class="caracteres">
+            <p v-for="caractere of caracteres" 
+                @click="afficherInfos(caractere)" 
+                :class="{selectionne : caractere.texte == caractere_texte}">
+                    {{ caractere.texte }}
+            </p>
+        </div>
+
+        <div v-show="caractere_texte != null" class="infos">
+            <p>{{ caractere_texte }} <span> - {{ caractere_prononciation }}</span></p>
+            <audio :src="'https://jduranleau.cpsw-fcsei.com/module5/js/mi-session/' + caractere_audio" controls></audio>
+
+            <div class="mots">
+                <p v-for="caractere_mot of caractere_mots">{{ caractere_mot.furigana }} 
+                    <span>
+                         - {{ caractere_mot.fr }}
+                         <img v-show="caractere_mot.fr == 'chat'" src="https://cdn-icons-png.flaticon.com/512/9435/9435789.png" alt="Image de chat">
+                    </span>
+                </p>
+            </div>
+       </div>
+
+    </div>
+    <script src="js/main.js" type="module"></script>
+
+</body>
+</html>

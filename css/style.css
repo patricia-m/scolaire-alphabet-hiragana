@@ -1,0 +1,63 @@
+body {
+    max-width: 85%;
+    margin: 50px auto;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.caracteres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.caracteres p {
+    padding: 10px 15px;
+    background-color: #9370d8;
+    margin: 0;
+}
+
+.caracteres p:hover {
+    background-color: #b09fd3;
+    cursor: pointer;
+}
+
+.caracteres p.selectionne {
+    background-color: #26a26c;
+}
+
+.caracteres p.selectionne:hover {
+    background-color: #77a993;
+}
+
+.infos {
+    margin-top: 75px;
+}
+
+.infos p {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.infos p span {
+    font-size: 2rem;
+    color: #808080;
+}
+
+.infos audio {
+    margin: 15px 0 30px 0;
+}
+
+.infos .mots p,
+.infos .mots p span {
+    font-size: 16px;
+    margin: 0;
+}
+
+.infos .mots img {
+    width: 30px;
+}
